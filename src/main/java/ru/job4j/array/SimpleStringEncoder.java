@@ -1,7 +1,6 @@
 package ru.job4j.array;
 
 public class SimpleStringEncoder {
-    @SuppressWarnings("checkstyle:WhitespaceAfter")
     public static String encode(String input) {
         String result = "";
         char symbol = input.charAt(0);
@@ -9,11 +8,8 @@ public class SimpleStringEncoder {
         for (int i = 1; i < input.length(); i++) {
             if (input.charAt(i) == symbol) {
                 counter++;
-            } else if (counter == 1) {
-                result = result + symbol;
-                symbol = input.charAt(i);
             } else {
-                result = result + symbol + counter;
+                result = counter > 1 ? result + symbol + counter : result + symbol;
                 symbol = input.charAt(i);
                 counter = 1;
             }
