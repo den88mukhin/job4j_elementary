@@ -41,4 +41,22 @@ class PointTest {
         double expected = 10.63;
         assertThat(out).isEqualTo(expected, withPrecision(0.01));
     }
+
+    @Test
+    void whenMinus6Minus4Minus1To233Then11dot36() {
+        Point a = new Point(-6, -4, -1);
+        Point b = new Point(2, 3, 3);
+        double out = a.distance3d(b);
+        double expected = 11.36;
+        assertThat(out).isEqualTo(expected, withPrecision(0.01));
+    }
+
+    @Test
+    void when135To856Then7dot35() {
+        Point a = new Point(1, 3, 5);
+        Point b = new Point(8, 5, 6);
+        double out = a.distance3d(b);
+        double expected = 7.35;
+        assertThat(out).isEqualTo(expected, withPrecision(0.01));
+    }
 }
